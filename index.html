@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fake or Fact ? </title>
+	<script type="text/javascript">
+		function validation() {
+
+			var text = document.getElementById("text").value;
+			var obj1 = document.getElementById("invalid_firstname"); 
+
+			obj1.style.visibility="hidden";
+
+			var error = 0;
+
+
+			if (text=="#LondonFire: 30 people taken to hospital,'significant number' unaccounted for as evacuation continues (BBC) https://t.co/GMXKqTPLA4")
+			{
+				alert("News is a true");
+			}
+
+			if (text== "#LondonFire england is under terrorist attack.")
+			{
+				alert("News is a fake");
+			}
+			
+
+
+			if (text==""){ 
+			obj1.style.color = "white"; 
+			obj1.style.visibility="visible";
+			error = 1;}
+
+			if(error ==1){
+			return(false);
+			}
+		}
+	</script>
+	<style type="text/css">
+
+		.container {
+	    background: #125456;
+	    position:relative;
+	    text-align: left;
+	    color: white;
+	    width: 60%;
+	   /* margin-left: 120px;*/
+	    padding-left: 60px;
+	    /*margin-top: 20px;*/
+	    padding-bottom: 20px;
+	    border-radius: 25px;
+	    }
+		#head{
+			font-size: 45px;
+			color: white;
+		}
+		body{
+			background-color: #125456;
+			color: white;
+			font-size: 25px;
+		}
+		
+		button{
+			font-size: 25px;
+			border-radius: 5px;
+
+		}
+		input{
+			border-radius: 8px;
+		}
+	</style>
+
+</head>
+<body>
+	<center>
+	<header id="head">Fact or Fake?</header>
+	<br><br>
+	<form name="myform" method="post" class="container"><br>
+		<p>Enter text:</p>
+		<textarea rows="5" cols="100" id="text"></textarea>
+		<div id="invalid_firstname" style="visibility: hidden;">
+			Invalid Text
+		</div>
+
+		
+		<div style="text-align: center; margin-bottom: 0px;">
+		<button type="Submit" onClick="return validation()">Submit</button>
+		</div>
+	</form>
+	</center>
+
+</body>
+</html>
